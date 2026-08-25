@@ -84,6 +84,8 @@ const awards = (await getCollection('awards', ({ data }) => data.featured))
             location={entry.data.location}
             dateLabel={entry.data.dateLabel}
             description={entry.data.description}
+            organizationUrl={entry.data.organizationUrl}
+            descriptionLinks={entry.data.descriptionLinks}
             showHighlights={false}
           />
         ))

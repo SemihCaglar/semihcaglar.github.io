@@ -12,6 +12,10 @@ const experience = defineCollection({
     description: z.string().optional(),
     highlights: z.array(z.string()).default([]),
     link: z.object({ url: z.string().url(), label: z.string() }).optional(),
+    organizationUrl: z.string().url().optional(),
+    descriptionLinks: z
+      .array(z.object({ text: z.string(), url: z.string().url() }))
+      .default([]),
     featured: z.boolean().default(false),
   }),
 });

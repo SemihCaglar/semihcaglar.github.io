@@ -10,5 +10,7 @@
     "Built and deployed SmellSolver, a GitHub/Azure DevOps PR bot (Python, Flask, SQLite) that detects and repairs inline comment smells, monitoring over 50 Azure Repos at Beko.",
     "Reviewed several papers in top venues."
   ],
+  "organizationUrl": "https://bilsen.cs.bilkent.edu.tr/",
+  "descriptionLinks": [{ "text": "Prof. Eray Tuzun", "url": "https://eraytuzun.com/" }],
   "featured": true
 }
