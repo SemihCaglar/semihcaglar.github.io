@@ -4,10 +4,8 @@
   "location": "Remote",
   "dateLabel": "Apr 2024 – Sep 2024",
   "order": 4,
-  "description": "Developed and deployed machine learning algorithms for fashion tech solutions, including text-to-image garment design and virtual try-on.",
-  "highlights": [
-    "Contributed to ModaMind's fashion design application and infrastructure using Google Cloud, Firebase, Docker, and Kubernetes."
-  ],
+  "description": "Developed and deployed machine learning algorithms for fashion tech solutions, including text-to-image garment design and virtual try-on. Contributed to ModaMind's fashion design application and infrastructure using Google Cloud, Firebase, Docker, and Kubernetes.",
+  "highlights": [],
   "link": { "url": "https://design.modamind.ai", "label": "ModaMind" },
   "featured": false
 }
