@@ -65,10 +65,10 @@ To add a new entry, copy an existing JSON file in the relevant folder, fill in t
 
 **CV file** — replace [public/cv/semih-caglar-cv.pdf](public/cv/semih-caglar-cv.pdf) with an updated export, keeping the same filename (or update the path referenced in [src/pages/cv.astro](src/pages/cv.astro) if you rename it).
 
-**Profile photo** — the homepage currently shows an initials placeholder. To use a real photo, add an image to `public/` and replace the placeholder `<div>` in [src/pages/index.astro](src/pages/index.astro) with an `<img>` tag pointing at it.
+**Profile photo** — the homepage shows [public/photo.jpg](public/photo.jpg). Replace that file (same name) to swap it, or update the `src` in [src/pages/index.astro](src/pages/index.astro) if you rename it.
 
 After editing content, run `npm run build` locally to confirm the site still builds before pushing.
 
 ## Notes on sourcing
 
-All copy on this site is derived directly from the CV — no invented achievements, dates, or metrics. A few things were intentionally left out because the CV didn't specify them (individual GitHub/demo links for the Deep Review and SplitMate projects, and a profile photo). Add them via the data files above whenever they're available.
+All copy on this site is derived directly from the CV — no invented achievements, dates, or metrics.

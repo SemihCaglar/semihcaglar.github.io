@@ -18,6 +18,7 @@ const personSchema = {
   '@type': 'Person',
   name: site.name,
   url: Astro.site?.toString(),
+  image: new URL('/photo.jpg', Astro.site).toString(),
   email: `mailto:${site.email}`,
   jobTitle: site.headline,
   address: {
