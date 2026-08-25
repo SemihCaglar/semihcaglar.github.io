@@ -4,6 +4,7 @@ import ThemeToggle from './ThemeToggle.astro';
 
 const navItems = [
   { href: '/', label: 'Home' },
+  { href: '/education', label: 'Education' },
   { href: '/experience', label: 'Experience' },
   { href: '/projects', label: 'Projects' },
   { href: '/publications', label: 'Publications' },
@@ -25,7 +26,7 @@ function isActive(href: string) {
       Semih Çağlar
     </a>
 
-    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
       {
         navItems.map((item) => (
           <a
@@ -47,7 +48,7 @@ function isActive(href: string) {
       </div>
     </nav>
 
-    <div class="flex items-center gap-1 md:hidden">
+    <div class="flex items-center gap-1 lg:hidden">
       <ThemeToggle />
       <button
         id="mobile-nav-toggle"
@@ -67,7 +68,7 @@ function isActive(href: string) {
     </div>
   </div>
 
-  <nav id="mobile-nav" aria-label="Primary mobile" class="hidden border-t border-zinc-200 dark:border-zinc-800 md:hidden">
+  <nav id="mobile-nav" aria-label="Primary mobile" class="hidden border-t border-zinc-200 dark:border-zinc-800 lg:hidden">
     <div class="mx-auto flex max-w-4xl flex-col px-6 py-2">
       {
         navItems.map((item) => (
