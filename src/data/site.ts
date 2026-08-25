@@ -5,7 +5,7 @@ export const site = {
   name: 'Semih Çağlar',
   headline: 'Computer Science Student & Software Engineering Researcher',
   intro:
-    "I'm a Computer Science student at Bilkent University, currently researching LLM-based software engineering and developer productivity. My work spans automated code review tooling, robotics path planning, and applied machine learning, with results published at venues including ASE and EASE. I'm currently a Research Intern at the SWAT Lab, Polytechnique Montréal.",
+    "I'm a Computer Science student at Bilkent University and a former informatics olympiad student, currently researching LLM-based software engineering and developer productivity. My work spans automated code review tooling, robotics path planning, and applied machine learning, with results published at venues including ASE and EASE. I'm currently a Research Intern at the SWAT Lab, Polytechnique Montréal.",
   location: 'Ankara, Türkiye',
   email: 'semihcaglar28@gmail.com',
 } as const;

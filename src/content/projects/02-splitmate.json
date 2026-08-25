@@ -3,7 +3,7 @@
   "description": "A desktop application for sharing group expenses and settling debts automatically.",
   "contribution": "Led a team of 5 and owned the backend, designing Spring Boot services and MongoDB schemas for users, groups, transactions, and debts, and integrating the desktop UI with the backend APIs. Built the automatic debt-settlement pipeline using Python and PuLP for integer linear programming.",
   "technologies": ["JavaFX", "Java", "Spring Boot", "MongoDB", "Python", "PuLP"],
-  "outcomes": ["Led a 5-person team as backend owner"],
+  "outcomes": [],
   "github": "https://github.com/Happy-Ending-102/SplitMate",
   "order": 2,
   "featured": true

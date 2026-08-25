@@ -58,7 +58,12 @@ const descriptionParts = description ? splitWithLinks(description, descriptionLi
   <p class="mt-0.5 text-sm font-medium text-zinc-600 dark:text-zinc-300">
     {
       organizationUrl ? (
-        <a href={organizationUrl} target="_blank" rel="noopener noreferrer" class="prose-link">
+        <a
+          href={organizationUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline-offset-2 transition-colors hover:text-zinc-900 hover:underline dark:hover:text-white"
+        >
           {organization}
         </a>
       ) : (
