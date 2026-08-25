@@ -4,6 +4,7 @@
   "contribution": "Designed and implemented AI-generated reviews, PDF annotation, empirical checklist generation, compliance analysis, and reference verification. Built the AI backend services and integrated LLM-powered workflows into the paper management and multi-round peer review pipelines.",
   "technologies": ["Next.js", "Express", "TypeScript", "TypeORM", "SQLite"],
   "outcomes": [],
+  "github": "https://github.com/SemihCaglar/Deep-Review",
   "order": 1,
   "featured": true
 }

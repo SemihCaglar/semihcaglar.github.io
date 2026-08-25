@@ -41,6 +41,7 @@ const publications = defineCollection({
     venue: z.string(),
     year: z.number(),
     status: z.string().optional(),
+    abstract: z.string().optional(),
     doi: z.string().url().optional(),
     arxiv: z.string().url().optional(),
     pdf: z.string().optional(),

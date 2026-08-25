@@ -44,9 +44,9 @@ const personSchema = {
 
     <script is:inline>
       (function () {
-        const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (stored === 'dark' || (!stored && prefersDark)) {
+        // Defaults to light mode regardless of system preference; only an
+        // explicit toggle (stored in localStorage) switches to dark.
+        if (localStorage.getItem('theme') === 'dark') {
           document.documentElement.classList.add('dark');
         }
       })();

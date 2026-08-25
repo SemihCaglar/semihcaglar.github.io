@@ -2,9 +2,9 @@
   "title": "SERSEM: Selective Entropy-Weighted Scoring for Membership Inference in Code Language Models",
   "authors": ["K. K. Dikici", "S. Kara", "S. Çağlar", "E. Tüzün", "S. Sav"],
   "highlightAuthor": "S. Çağlar",
-  "venue": "FSE/AIware 2026 Poisoned Chalice Competition",
+  "venue": "ACM International Conference on the Foundations of Software Engineering / AI-powered Software (FSE/AIware)",
   "year": 2026,
-  "status": "1st Place",
+  "status": "Poisoned Chalice Competition · 1st Place",
   "doi": "https://doi.org/10.1145/3803437.3807734",
   "order": 1,
   "featured": true

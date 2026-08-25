@@ -11,7 +11,8 @@ interface Props {
     | 'menu'
     | 'close'
     | 'download'
-    | 'file';
+    | 'file'
+    | 'chevron-right';
   class?: string;
 }
 
@@ -72,6 +73,13 @@ const { name, class: className = 'h-5 w-5' } = Astro.props;
   name === 'menu' && (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class={className} aria-hidden="true">
       <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+    </svg>
+  )
+}
+{
+  name === 'chevron-right' && (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class={className} aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="m9 5.25 6.75 6.75L9 18.75" />
     </svg>
   )
 }

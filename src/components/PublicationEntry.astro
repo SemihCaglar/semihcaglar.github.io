@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro';
+
 interface Props {
   title: string;
   authors: string[];
@@ -6,6 +8,7 @@ interface Props {
   venue: string;
   year: number;
   status?: string;
+  abstract?: string;
   doi?: string;
   arxiv?: string;
   pdf?: string;
@@ -22,6 +25,7 @@ const {
   venue,
   year,
   status,
+  abstract,
   doi,
   arxiv,
   pdf,
@@ -64,6 +68,18 @@ const Heading = level === 2 ? 'h2' : 'h3';
     <span class="italic">{venue}</span>, {year}
     {status && <span class="ml-1 font-medium text-zinc-700 dark:text-zinc-300">· {status}</span>}
   </p>
+
+  {
+    !compact && abstract && (
+      <details class="group mt-2.5">
+        <summary class="flex cursor-pointer list-none items-center gap-1 text-sm font-medium text-zinc-600 [&::-webkit-details-marker]:hidden dark:text-zinc-300">
+          <Icon name="chevron-right" class="h-3.5 w-3.5 shrink-0 transition-transform group-open:rotate-90" />
+          Abstract
+        </summary>
+        <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">{abstract}</p>
+      </details>
+    )
+  }
 
   {
     !compact && links.length > 0 && (
