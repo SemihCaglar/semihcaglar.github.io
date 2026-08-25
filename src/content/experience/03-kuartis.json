@@ -1,0 +1,14 @@
+{
+  "organization": "Kuartis",
+  "position": "Robotics Software Engineer Intern",
+  "location": "Ankara, Türkiye",
+  "dateLabel": "Jun 2025 – Aug 2025",
+  "order": 3,
+  "description": "Built a ROS2 path-planning module for autonomous surface vessels.",
+  "highlights": [
+    "Combined the Hybrid A* algorithm with an Artificial Potential Field (APF) post-optimizer to generate non-holonomic paths.",
+    "Implemented the constrained APF optimizer in modern C++ with NLopt, enforcing collision-free corridor and curvature constraints.",
+    "Validated the system in 1 km² simulated maritime environments, achieving 20 m path precision with optimization completing in 1 second per run."
+  ],
+  "featured": true
+}

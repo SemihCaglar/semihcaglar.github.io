@@ -1,0 +1,109 @@
+---
+import Icon from './Icon.astro';
+import ThemeToggle from './ThemeToggle.astro';
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/experience', label: 'Experience' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/publications', label: 'Publications' },
+  { href: '/awards', label: 'Awards' },
+  { href: '/cv', label: 'CV' },
+];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+function isActive(href: string) {
+  if (href === '/') return currentPath === '/';
+  return currentPath === href || currentPath.startsWith(`${href}/`);
+}
+---
+
+<header class="sticky top-0 z-40 border-b border-zinc-200/80 bg-white/85 backdrop-blur dark:border-zinc-800/80 dark:bg-zinc-950/85">
+  <div class="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+    <a href="/" class="text-base font-semibold tracking-tight text-zinc-900 dark:text-white">
+      Semih Çağlar
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            aria-current={isActive(item.href) ? 'page' : undefined}
+            class:list={[
+              'rounded-md px-3 py-2 text-sm font-medium transition-colors',
+              isActive(item.href)
+                ? 'text-zinc-900 dark:text-white'
+                : 'text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white',
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <div class="ml-2 border-l border-zinc-200 pl-3 dark:border-zinc-800">
+        <ThemeToggle />
+      </div>
+    </nav>
+
+    <div class="flex items-center gap-1 md:hidden">
+      <ThemeToggle />
+      <button
+        id="mobile-nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="Open menu"
+        class="rounded-md p-2 text-zinc-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
+      >
+        <span id="mobile-nav-icon-open">
+          <Icon name="menu" class="h-6 w-6" />
+        </span>
+        <span id="mobile-nav-icon-close" class="hidden">
+          <Icon name="close" class="h-6 w-6" />
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" aria-label="Primary mobile" class="hidden border-t border-zinc-200 dark:border-zinc-800 md:hidden">
+    <div class="mx-auto flex max-w-4xl flex-col px-6 py-2">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            aria-current={isActive(item.href) ? 'page' : undefined}
+            class:list={[
+              'rounded-md px-2 py-2.5 text-sm font-medium transition-colors',
+              isActive(item.href)
+                ? 'text-zinc-900 dark:text-white'
+                : 'text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white',
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
+
+<script is:inline>
+  (function () {
+    const btn = document.getElementById('mobile-nav-toggle');
+    const nav = document.getElementById('mobile-nav');
+    const iconOpen = document.getElementById('mobile-nav-icon-open');
+    const iconClose = document.getElementById('mobile-nav-icon-close');
+    if (!btn || !nav || !iconOpen || !iconClose) return;
+
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      btn.setAttribute('aria-label', expanded ? 'Open menu' : 'Close menu');
+      nav.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  })();
+</script>

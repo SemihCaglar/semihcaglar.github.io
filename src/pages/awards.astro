@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import AwardEntry from '../components/AwardEntry.astro';
+import { site } from '../data/site';
+
+const awards = (await getCollection('awards')).sort((a, b) => a.data.order - b.data.order);
+
+const description = `Awards, honors, and leadership activities of ${site.name}, including competitive programming and academic recognitions.`;
+---
+
+<BaseLayout title={`Awards & Honors | ${site.name}`} description={description} path="/awards">
+  <section class="mx-auto max-w-4xl px-6 py-14">
+    <PageHeader title="Awards & Honors" description="Recognitions from academic, competitive, and community work." />
+
+    <div class="divide-y divide-zinc-200 dark:divide-zinc-800">
+      {
+        awards.map((award) => (
+          <AwardEntry
+            title={award.data.title}
+            organization={award.data.organization}
+            dateLabel={award.data.dateLabel}
+            description={award.data.description}
+            level={2}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

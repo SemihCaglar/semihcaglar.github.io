@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { site } from '../data/site';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+
+const description = `Selected software projects built by ${site.name}, spanning web applications, backend systems, and applied optimization.`;
+---
+
+<BaseLayout title={`Projects | ${site.name}`} description={description} path="/projects">
+  <section class="mx-auto max-w-4xl px-6 py-14">
+    <PageHeader title="Projects" description="A selection of projects I've designed, built, and shipped." />
+
+    <div class="grid gap-5 sm:grid-cols-2">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            name={project.data.name}
+            description={project.data.description}
+            contribution={project.data.contribution}
+            technologies={project.data.technologies}
+            outcomes={project.data.outcomes}
+            github={project.data.github}
+            demo={project.data.demo}
+            publication={project.data.publication}
+            level={2}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

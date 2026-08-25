@@ -1,0 +1,154 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import ExperienceEntry from '../components/ExperienceEntry.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import PublicationEntry from '../components/PublicationEntry.astro';
+import AwardEntry from '../components/AwardEntry.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site';
+
+const experience = (await getCollection('experience', ({ data }) => data.featured))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+
+const projects = (await getCollection('projects', ({ data }) => data.featured))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 2);
+
+const publications = (await getCollection('publications', ({ data }) => data.featured))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+
+const awards = (await getCollection('awards', ({ data }) => data.featured))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+---
+
+<BaseLayout
+  title={`${site.name} | Personal Website`}
+  description={site.intro}
+  path="/"
+>
+  <section class="mx-auto max-w-4xl px-6 pt-14 pb-16 sm:pt-20">
+    <div class="flex flex-col items-start gap-8 sm:flex-row sm:items-center">
+      <!--
+        Profile photo placeholder — replace with a real photo by adding an
+        <img src="/profile.jpg" alt="Photo of Semih Çağlar" .../> here.
+      -->
+      <div
+        class="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-2xl font-semibold text-zinc-500 sm:h-28 sm:w-28 dark:bg-zinc-800 dark:text-zinc-400"
+        role="img"
+        aria-label="Placeholder profile photo for Semih Çağlar"
+      >
+        SÇ
+      </div>
+
+      <div>
+        <h1 class="text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
+          {site.name}
+        </h1>
+        <p class="mt-2 text-lg text-zinc-600 dark:text-zinc-300">{site.headline}</p>
+        <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{site.location}</p>
+      </div>
+    </div>
+
+    <p class="mt-8 max-w-2xl text-base leading-relaxed text-zinc-600 dark:text-zinc-300">
+      {site.intro}
+    </p>
+
+    <div class="mt-8 flex flex-wrap items-center gap-5">
+      <SocialLinks />
+      <a
+        href="/cv"
+        class="inline-flex items-center gap-2 rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
+      >
+        <Icon name="file" class="h-4 w-4" />
+        View CV
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-6 py-10">
+    <div class="flex items-baseline justify-between">
+      <h2 class="text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">Experience</h2>
+      <a href="/experience" class="prose-link text-sm">View all →</a>
+    </div>
+    <div class="mt-2 divide-y divide-zinc-200 dark:divide-zinc-800">
+      {
+        experience.map((entry) => (
+          <ExperienceEntry
+            position={entry.data.position}
+            organization={entry.data.organization}
+            location={entry.data.location}
+            dateLabel={entry.data.dateLabel}
+            description={entry.data.description}
+            showHighlights={false}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-6 py-10">
+    <div class="flex items-baseline justify-between">
+      <h2 class="text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">Projects</h2>
+      <a href="/projects" class="prose-link text-sm">View all →</a>
+    </div>
+    <div class="mt-4 grid gap-5 sm:grid-cols-2">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            name={project.data.name}
+            description={project.data.description}
+            technologies={project.data.technologies}
+            github={project.data.github}
+            demo={project.data.demo}
+            compact
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-6 py-10">
+    <div class="flex items-baseline justify-between">
+      <h2 class="text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">Publications</h2>
+      <a href="/publications" class="prose-link text-sm">View all →</a>
+    </div>
+    <div class="mt-2 divide-y divide-zinc-200 dark:divide-zinc-800">
+      {
+        publications.map((pub) => (
+          <PublicationEntry
+            title={pub.data.title}
+            authors={pub.data.authors}
+            highlightAuthor={pub.data.highlightAuthor}
+            venue={pub.data.venue}
+            year={pub.data.year}
+            status={pub.data.status}
+            compact
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-6 py-10 pb-20">
+    <div class="flex items-baseline justify-between">
+      <h2 class="text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">Awards &amp; Honors</h2>
+      <a href="/awards" class="prose-link text-sm">View all →</a>
+    </div>
+    <div class="mt-2 divide-y divide-zinc-200 dark:divide-zinc-800">
+      {
+        awards.map((award) => (
+          <AwardEntry
+            title={award.data.title}
+            organization={award.data.organization}
+            dateLabel={award.data.dateLabel}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

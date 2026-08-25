@@ -1,0 +1,10 @@
+{
+  "title": "Automated Classification of Human Code Review Comments with Large Language Models",
+  "authors": ["S. Çağlar", "Ş. E. Gökırmak", "E. Tüzün"],
+  "highlightAuthor": "S. Çağlar",
+  "venue": "EASE 2026 (CORE A)",
+  "year": 2026,
+  "arxiv": "https://arxiv.org/abs/2604.23667",
+  "order": 2,
+  "featured": true
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Deep Review",
+  "description": "An academic paper review management system featuring an LLM-powered review assistant.",
+  "contribution": "Designed and implemented AI-generated reviews, PDF annotation, empirical checklist generation, compliance analysis, and reference verification. Built the AI backend services and integrated LLM-powered workflows into the paper management and multi-round peer review pipelines.",
+  "technologies": ["Next.js", "Express", "TypeScript", "TypeORM", "SQLite"],
+  "outcomes": [],
+  "order": 1,
+  "featured": true
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Automated Inline Comment Smell Detection and Repair with Large Language Models",
+  "authors": ["H. K. Çağlar", "S. Çağlar", "E. Tüzün"],
+  "highlightAuthor": "S. Çağlar",
+  "venue": "IEEE/ACM ASE 2025 (CORE A*)",
+  "year": 2025,
+  "status": "pp. 1008–1019",
+  "doi": "https://doi.org/10.1109/ASE63991.2025.00088",
+  "order": 3,
+  "featured": true
+}

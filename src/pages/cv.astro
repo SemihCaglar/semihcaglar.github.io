@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Icon from '../components/Icon.astro';
+import { site, education, skillGroups } from '../data/site';
+
+const cvPath = '/cv/semih-caglar-cv.pdf';
+const description = `Download or view the CV of ${site.name}, including education, experience, and technical skills.`;
+---
+
+<BaseLayout title={`CV | ${site.name}`} description={description} path="/cv">
+  <section class="mx-auto max-w-4xl px-6 py-14">
+    <PageHeader title="CV" description="View the embedded document below or download the PDF." />
+
+    <div class="flex flex-wrap items-center gap-4">
+      <a
+        href={cvPath}
+        download
+        class="inline-flex items-center gap-2 rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
+      >
+        <Icon name="download" class="h-4 w-4" />
+        Download CV (PDF)
+      </a>
+      <a href={cvPath} target="_blank" rel="noopener noreferrer" class="prose-link text-sm">
+        Open in new tab →
+      </a>
+    </div>
+
+    <div class="mt-8 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800">
+      <object data={cvPath} type="application/pdf" class="h-[70vh] w-full" aria-label={`Embedded PDF of ${site.name}'s CV`}>
+        <div class="flex h-[50vh] flex-col items-center justify-center gap-3 p-8 text-center">
+          <p class="text-sm text-zinc-600 dark:text-zinc-300">
+            Your browser can't display the PDF inline.
+          </p>
+          <a href={cvPath} class="prose-link text-sm">Open the CV directly →</a>
+        </div>
+      </object>
+    </div>
+
+    <div class="mt-16 grid gap-12 sm:grid-cols-2">
+      <div>
+        <h2 class="text-lg font-semibold text-zinc-900 dark:text-white">Education</h2>
+        <div class="mt-4">
+          <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+            <h3 class="text-base font-semibold text-zinc-900 dark:text-white">{education.institution}</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400">{education.dateLabel}</p>
+          </div>
+          <p class="mt-0.5 text-sm font-medium text-zinc-600 dark:text-zinc-300">
+            {education.degree}
+            <span class="text-zinc-400 dark:text-zinc-500"> — {education.location}</span>
+          </p>
+          <ul class="mt-3 space-y-1.5">
+            {
+              education.details.map((item) => (
+                <li class="flex gap-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-600" />
+                  <span>{item}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-semibold text-zinc-900 dark:text-white">Technical Skills</h2>
+        <div class="mt-4 space-y-4">
+          {
+            skillGroups.map((group) => (
+              <div>
+                <p class="text-sm font-medium text-zinc-700 dark:text-zinc-300">{group.category}</p>
+                <ul class="mt-2 flex flex-wrap gap-2">
+                  {group.skills.map((skill) => (
+                    <li class="rounded-full bg-zinc-100 px-2.5 py-1 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

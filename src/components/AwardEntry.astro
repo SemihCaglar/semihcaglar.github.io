@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  organization?: string;
+  dateLabel: string;
+  description?: string;
+  level?: 2 | 3;
+}
+
+const { title, organization, dateLabel, description, level = 3 } = Astro.props;
+const Heading = level === 2 ? 'h2' : 'h3';
+---
+
+<article class="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+  <div>
+    <Heading class="text-base font-semibold text-zinc-900 dark:text-white">{title}</Heading>
+    {organization && <p class="mt-0.5 text-sm text-zinc-600 dark:text-zinc-300">{organization}</p>}
+    {description && <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{description}</p>}
+  </div>
+  <p class="shrink-0 text-sm text-zinc-500 dark:text-zinc-400">{dateLabel}</p>
+</article>
