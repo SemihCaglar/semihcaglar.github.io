@@ -1,6 +1,6 @@
 # semihcaglar.github.io
 
-Personal portfolio website for Semih Çağlar. Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com), statically generated and deployed to GitHub Pages.
+Personal portfolio website for Semih Caglar. Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com), statically generated and deployed to GitHub Pages.
 
 ## Stack
 

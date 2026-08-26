@@ -2,7 +2,7 @@
 // Edit this file to update the headline, intro, education, links, or skills.
 
 export const site = {
-  name: 'Semih Çağlar',
+  name: 'Semih Caglar',
   headline: 'Computer Science Student & Software Engineering Researcher',
   intro:
     "I'm a Computer Science student at Bilkent University, ranked 1st in my department, and a former informatics olympiad student, currently researching LLM-based software engineering and developer productivity. My work spans automated code review tooling, robotics path planning, and applied machine learning, with results published at venues including ASE and EASE. I'm currently a Research Intern at the SWAT Lab, Polytechnique Montréal.",

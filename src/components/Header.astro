@@ -1,6 +1,7 @@
 ---
 import Icon from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
+import { site } from '../data/site';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -23,7 +24,7 @@ function isActive(href: string) {
 <header class="sticky top-0 z-40 border-b border-zinc-200/80 bg-white/85 backdrop-blur dark:border-zinc-800/80 dark:bg-zinc-950/85">
   <div class="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
     <a href="/" class="text-base font-semibold tracking-tight text-zinc-900 dark:text-white">
-      Semih Çağlar
+      {site.name}
     </a>
 
     <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
