@@ -2,12 +2,13 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialLinks from '../components/SocialLinks.astro';
+import EducationEntry from '../components/EducationEntry.astro';
 import ExperienceEntry from '../components/ExperienceEntry.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import PublicationEntry from '../components/PublicationEntry.astro';
 import AwardEntry from '../components/AwardEntry.astro';
 import Icon from '../components/Icon.astro';
-import { site } from '../data/site';
+import { site, educationEntries } from '../data/site';
 
 const experience = (await getCollection('experience', ({ data }) => data.featured))
   .sort((a, b) => a.data.order - b.data.order)
@@ -81,6 +82,26 @@ const awards = (await getCollection('awards', ({ data }) => data.featured))
         <Icon name="file" class="h-4 w-4" />
         View CV
       </a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-6 py-10">
+    <div class="flex items-baseline justify-between">
+      <h2 class="text-xl font-semibold tracking-tight text-zinc-900 dark:text-white">Education</h2>
+      <a href="/education" class="prose-link text-sm">View all →</a>
+    </div>
+    <div class="mt-2 divide-y divide-zinc-200 dark:divide-zinc-800">
+      {
+        educationEntries.map((entry) => (
+          <EducationEntry
+            institution={entry.institution}
+            logo={entry.logo}
+            degree={entry.degree}
+            location={entry.location}
+            dateLabel={entry.dateLabel}
+          />
+        ))
+      }
     </div>
   </section>
 
