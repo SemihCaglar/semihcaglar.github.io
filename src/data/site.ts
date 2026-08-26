@@ -36,6 +36,7 @@ export const socialLinks = [
 export const educationEntries = [
   {
     institution: 'Bilkent University',
+    logo: '/logos/bilkent.jpeg',
     degree: 'B.Sc. in Computer Science',
     location: 'Ankara, Türkiye',
     dateLabel: 'Sep 2023 – Expected Jun 2028',
@@ -48,6 +49,7 @@ export const educationEntries = [
   },
   {
     institution: 'Ankara Science High School',
+    logo: '/logos/ankara-fen.png',
     degree: undefined as string | undefined,
     location: 'Ankara, Türkiye',
     dateLabel: '2023',
