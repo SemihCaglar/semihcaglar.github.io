@@ -36,13 +36,14 @@ export const socialLinks = [
 export const educationEntries = [
   {
     institution: 'Bilkent University',
-    degree: 'B.Sc. in Computer Science, Minor in Psychology',
+    degree: 'B.Sc. in Computer Science',
     location: 'Ankara, Türkiye',
     dateLabel: 'Sep 2023 – Expected Jun 2028',
     details: [
       'Full Scholarship',
       'GPA: 3.96 / 4.00',
       'Ranked 1st out of 169 students in the department',
+      'Minor in Psychology (GPA: 4.00 / 4.00)',
     ],
   },
   {
