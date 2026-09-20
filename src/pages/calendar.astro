@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { site } from '../data/site';
+
+const description = `Check ${site.name}'s availability for scheduling a meeting.`;
+---
+
+<BaseLayout title={`Calendar | ${site.name}`} description={description} path="/calendar">
+  <section class="mx-auto max-w-4xl px-6 py-14">
+    <PageHeader title="Calendar" description="My current availability — feel free to check before reaching out to schedule something." />
+
+    <div class="overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FIstanbul&showPrint=0&mode=WEEK&showCalendars=0&src=c2VtaWhjYWdsYXIyOEBnbWFpbC5jb20&src=ODBlZTk5YWM0NWIwYTgzYWU0ZjNkZWM5MzhmMTQ2ZTM5YmNlM2Q0ZGM3Yzg1ZGY1NTQzMWRmNGQyZDY0NjAzYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%23009688"
+        style="border:0"
+        width="100%"
+        height="600"
+        frameborder="0"
+        scrolling="no"
+        title={`${site.name}'s calendar`}
+      ></iframe>
+    </div>
+  </section>
+</BaseLayout>
