@@ -3,7 +3,7 @@
   "position": "Robotics Software Engineer Intern",
   "location": "Ankara, Türkiye",
   "dateLabel": "Jun 2025 – Aug 2025",
-  "order": 3,
+  "order": 4,
   "description": "Built a ROS2 path-planning module for autonomous surface vessels.",
   "highlights": [
     "Combined the Hybrid A* algorithm with an Artificial Potential Field (APF) post-optimizer to generate non-holonomic paths.",

@@ -3,9 +3,9 @@
 
 export const site = {
   name: 'Semih Caglar',
-  headline: 'Computer Science Student & Software Engineering Researcher',
+  headline: 'Founding Engineer & Software Engineering Researcher',
   intro:
-    "I'm a Computer Science student at Bilkent University, ranked 1st in my department, and an informatics olympiad medalist, currently researching LLM-based software engineering and developer productivity. My work spans automated code review tooling, robotics path planning, and applied machine learning, with results published at venues including ASE and EASE. I'm currently a Research Intern at the SWAT Lab, Polytechnique Montréal.",
+    "I'm a Computer Science student at Bilkent University, ranked 1st in my department, a Founding Engineer at Hansel, and an informatics olympiad medalist. I research LLM-based software engineering and developer decision-making at the SWAT Lab, Polytechnique Montréal, and developer productivity at Bilsen. My work spans automated code review tooling, indoor mapping and route generation, robotics path planning, and applied machine learning, with results published at venues including ASE, EASE, FSE/AIware, and ATIQSER.",
   location: 'Ankara, Türkiye',
   email: 'semihcaglar28@gmail.com',
 } as const;
@@ -34,6 +34,14 @@ export const socialLinks = [
 ] as const;
 
 export const educationEntries = [
+  {
+    institution: 'Vrije Universiteit Amsterdam',
+    logo: undefined as string | undefined,
+    degree: 'Exchange Student',
+    location: 'Amsterdam, Netherlands',
+    dateLabel: 'Feb 2027 – Jun 2027',
+    details: [],
+  },
   {
     institution: 'Bilkent University',
     logo: '/logos/bilkent.jpeg',

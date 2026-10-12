@@ -10,9 +10,9 @@ const awards = (await getCollection('awards')).sort((a, b) => a.data.order - b.d
 const description = `Awards, honors, and leadership activities of ${site.name}, including competitive programming and academic recognitions.`;
 ---
 
-<BaseLayout title={`Awards & Honors | ${site.name}`} description={description} path="/awards">
+<BaseLayout title={`Awards & Activities | ${site.name}`} description={description} path="/awards">
   <section class="mx-auto max-w-4xl px-6 py-14">
-    <PageHeader title="Awards & Honors" description="Recognitions from academic, competitive, and community work." />
+    <PageHeader title="Awards & Activities" description="Recognitions and leadership from academic, competitive, and community work." />
 
     <div class="divide-y divide-zinc-200 dark:divide-zinc-800">
       {

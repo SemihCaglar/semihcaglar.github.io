@@ -3,10 +3,10 @@
   "position": "Undergraduate Researcher",
   "location": "Ankara, Türkiye",
   "dateLabel": "Jan 2025 – Present",
-  "order": 2,
+  "order": 3,
   "description": "Conducting research in developer productivity and automated software engineering, advised by Prof. Eray Tuzun.",
   "highlights": [
-    "Co-authored 2 conference papers and 1 workshop paper in top venues.",
+    "Co-authored 2 conference papers and 2 workshop papers in top venues.",
     "Built and deployed SmellSolver, a GitHub/Azure DevOps PR bot (Python, Flask, SQLite) that detects and repairs inline comment smells, monitoring over 50 Azure Repos at Beko.",
     "Reviewed several papers in top venues."
   ],

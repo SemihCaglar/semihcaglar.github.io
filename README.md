@@ -59,7 +59,7 @@ All CV-derived content lives in structured data files, separate from the page te
 | Experience | [src/content/experience/](src/content/experience) |
 | Projects | [src/content/projects/](src/content/projects) |
 | Publications | [src/content/publications/](src/content/publications) |
-| Awards & Honors | [src/content/awards/](src/content/awards) |
+| Awards & Activities | [src/content/awards/](src/content/awards) |
 
 To add a new entry, copy an existing JSON file in the relevant folder, fill in the fields (the schema is enforced in [src/content.config.ts](src/content.config.ts) — a build fails loudly if a required field is missing or the wrong type), and give it an `order` value to control where it sorts. Set `"featured": true` to have an entry show up in that section's preview on the homepage.
 
