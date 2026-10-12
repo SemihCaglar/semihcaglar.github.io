@@ -36,7 +36,7 @@ export const socialLinks = [
 export const educationEntries = [
   {
     institution: 'Vrije Universiteit Amsterdam',
-    logo: undefined as string | undefined,
+    logo: '/logos/vrije-universiteit-amsterdam.jpg',
     degree: 'Exchange Student',
     location: 'Amsterdam, Netherlands',
     dateLabel: 'Feb 2027 – Jun 2027',
