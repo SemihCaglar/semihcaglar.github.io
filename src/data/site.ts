@@ -5,7 +5,7 @@ export const site = {
   name: 'Semih Caglar',
   headline: 'Founding Engineer & Software Engineering Researcher',
   intro:
-    "I'm a Computer Science student at Bilkent University, ranked 1st in my department, a Founding Engineer at Hansel, and an informatics olympiad medalist. I research LLM-based software engineering and developer decision-making at the SWAT Lab, Polytechnique Montréal, and developer productivity at Bilsen. My work spans automated code review tooling, indoor mapping and route generation, robotics path planning, and applied machine learning, with results published at venues including ASE, EASE, FSE/AIware, and ATIQSER.",
+    "I'm a Computer Science student at Bilkent University, ranked 1st in my department, a Founding Engineer at Hansel, and an informatics olympiad medalist. I research developer productivity and automated software engineering at Bilsen, and previously worked on agent personalization under the supervision of Prof. Foutse Khomh at the SWAT Lab, Polytechnique Montréal. My work spans automated code review tooling, indoor mapping and route generation, robotics path planning, and applied machine learning, with results published at venues including ASE, EASE, FSE/AIware, and ATIQSER.",
   location: 'Ankara, Türkiye',
   email: 'semihcaglar28@gmail.com',
 } as const;
